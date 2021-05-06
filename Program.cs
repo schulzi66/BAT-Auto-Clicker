@@ -16,8 +16,7 @@ namespace BATClicker
                 var closeBtn = new UITestControl(By.CPath("/Button[@name='Close']"), notification);
                 var dismissBtn = new UITestControl(By.CPath("/Button[@id='DismissButton']"), notification);
                 if (notification.Exists)
-                {
-                    Console.WriteLine("found");
+                {                    
                     var existingBtn = closeBtn.Exists ? closeBtn : dismissBtn;
                     var currentCursorPos = Cursor.Position;
                     existingBtn.MoveMouseToClickablePoint();
