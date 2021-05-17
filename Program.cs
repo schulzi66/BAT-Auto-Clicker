@@ -1,8 +1,8 @@
 ﻿using Rocketcress.UIAutomation;
 using Rocketcress.UIAutomation.Controls;
+using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Windows.Automation;
 using System.Windows.Forms;
 
 namespace BATClicker
@@ -31,7 +31,7 @@ namespace BATClicker
                     }
                     Thread.Sleep(100);
                 }
-                catch (ElementNotAvailableException ex)
+                catch (Exception ex)
                 {
                     EventLog.WriteEntry("BATClicker", ex.StackTrace, EventLogEntryType.Error);
                 }
