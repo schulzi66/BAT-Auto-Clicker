@@ -1,7 +1,7 @@
 ﻿using Rocketcress.UIAutomation;
 using Rocketcress.UIAutomation.Controls;
 using System;
-using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,6 +11,7 @@ namespace BATClicker
     {
         static void Main(string[] args)
         {
+            File.Create("./log.txt");
             while (true)
             {
                 try
@@ -33,9 +34,9 @@ namespace BATClicker
                 }
                 catch (Exception ex)
                 {
-                    EventLog.WriteEntry("BATClicker", ex.StackTrace, EventLogEntryType.Error);
+                    File.AppendAllText("./log.txt", ex.StackTrace);
                 }
-                
+
             }
         }
 
